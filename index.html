@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>VotesCountes</title>
+
+
+    <style>
+        body {
+            background-color: #ffffff;
+            margin: 0px;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 80px;
+            height: 80px;
+            margin: -76px 0 0 -76px;
+            border: 30px solid #d601cc;
+            border-radius: 50%;
+            border-top: 30px solid rgb(219, 0, 0);
+            border-right: 30px solid rgb(21, 88, 233);
+            border-bottom: 30px solid rgb(255, 177, 9);
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+        
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        #mainAnim {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+            text-align: center;
+            opacity: 1;
+        }
+        
+        #winnerAnim {
+            /* position: absolute; */
+            top: 0px;
+            left: 0px;
+            background-color: rgba(255, 255, 255, 0);
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+            transform: translate3d(0, 0, 0);
+            text-align: center;
+            opacity: 1;
+        }
+        
+        .nextRegButton {
+            /* position: relative; */
+            box-shadow: 0px 0px 0px 2px #9fb4f2;
+            background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+            background-color: #7892c2;
+            border-radius: 10px;
+            border: 1px solid #4e6096;
+            display: inline-block;
+            visibility: hidden;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 3vh;
+            padding: 1vh 3vw;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #283966;
+            transform: translateX(20vw);
+        }
+        
+        .nextRegButton:hover {
+            background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+            background-color: #476e9e;
+        }
+        
+        .nextRegButton:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+
+</head>
+
+<body id="demo" onload="loaderFunction()">
+    <br><br>
+    <div id=nextRegionButton>
+        <a href="#" class="nextRegButton" onclick="nextRegion()">Next region</a>
+    </div>
+
+    <div id="loader"></div>
+
+    <div id="list"></div>
+
+    <div id="mainAnim"></div>
+    <div id="winnerAnim"></div>
+
+    <script>
+        function loaderFunction() {
+            document.getElementById("loader").style.display = "none"
+            document.getElementsByClassName('nextRegButton')[0].style.visibility = 'visible'
+        }
+    </script>
+
+    <!-- Path to Lottie script (After Effects to web anim conversion) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.5/lottie.min.js" integrity="sha512-0bCDSnaX8FOD9Mq8WbHcDwshXwCB5V4EP+UBu87WQgga2b7lAsuEbaSmIZjH/XEmNhJuhrPbFHemre5HZwrk9w==" crossorigin="anonymous"></script>
+
+    <script src="./storedResults.js"></script>
+    <script src="./main.js"></script>
+
+
+</body>
+
+</html>
